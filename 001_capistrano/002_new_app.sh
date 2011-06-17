@@ -14,11 +14,9 @@ cd  $TOP/tmp/myapp
 mv Gemfile Gemfile.orig
 cp ../../src/Gemfile .
 
-# ---------------- http://ryanflorence.com/deploying-with-capistrano-without-rails/
+# ---------------- https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
 
 cd  $TOP/tmp/myapp
-
-echo "Hi and stuff" > index.html
 
 capify .
 cp $TOP/src/config/deploy.rb $TOP/tmp/myapp/config/deploy.rb
