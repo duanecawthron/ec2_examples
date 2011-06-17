@@ -1,0 +1,31 @@
+= Deploy files to ec2 with capistrano and without rails
+
+== Resources
+
+	https://github.com/capistrano/capistrano/
+	https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
+	http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
+	http://ryanflorence.com/deploying-with-capistrano-without-rails/
+
+== Introduction
+
+
+== EC2 Configuration
+
+	gem install capistrano -d
+
+== Execution
+
+Generate the example.
+
+	cd   002_capistrano_norails
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+
+Deploy the example.
+
+	bash 005_deploy.sh
+
+Delete the files and gemset.
+
+	bash 999_clean.sh
