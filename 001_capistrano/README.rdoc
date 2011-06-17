@@ -1,0 +1,40 @@
+= Generate a simple rails application and deploy to ec2 with capistrano
+
+== Resources
+
+	https://github.com/capistrano/capistrano/
+	https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
+	http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
+	http://ryanflorence.com/deploying-with-capistrano-without-rails/
+
+== Introduction
+
+
+== EC2 and Thin Configuration
+
+	yum install sqlite-devel.i686
+	gem install sqlite3 -d
+	gem install capistrano -d
+
+	service thin stop
+	mv /etc/thin /etc/thin.1
+	thin config -C /etc/thin/current -c /var/www/current --servers 3 -e development
+	service thin start
+
+== Execution
+
+Generate and run the example.
+
+	cd   001_capistrano
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+	bash 003_reset_database.sh
+	bash 004_rails_server.sh
+
+Deploy the application.
+
+	bash 005_deploy.sh
+
+Delete the database, files and gemset.
+
+	bash 999_clean.sh
