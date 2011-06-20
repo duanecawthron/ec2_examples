@@ -21,7 +21,7 @@ This example does not attempt to configure the software.
 	cd   006_icecast/server
 	bash 001_install_capistrano.sh
 
-== Generate the example and deploy to he EC2 server
+== Generate the example and deploy to the EC2 server
 
 Generate the example.
 

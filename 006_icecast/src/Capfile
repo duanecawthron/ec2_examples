@@ -22,10 +22,12 @@ task :sudo_whoami do
   run "sudo whoami"
 end
 
+desc "yum install packages required by Icecast"
 task :yum_icecast do
 	run "sudo #{deploy_to}/current/scripts/yum_icecast.sh"
 end
 
+desc "download and make Icecast"
 task :make_icecast do
 	run "sudo #{deploy_to}/current/scripts/download_icecast.sh"
 	run "sudo #{deploy_to}/current/scripts/make_icecast.sh"

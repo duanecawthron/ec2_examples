@@ -17,7 +17,7 @@ Capistrano is a Ruby program that can be used to deploy files to multiple server
 	cd   002_capistrano_norails/server
 	bash 001_install_capistrano.sh
 
-== Generate the example and deploy to he EC2 server
+== Generate the example and deploy to the EC2 server
 
 Generate the example.
 
