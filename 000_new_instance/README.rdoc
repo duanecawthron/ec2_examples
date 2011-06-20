@@ -1,0 +1,66 @@
+= Create a new server instance on EC2
+
+== Resources
+
+	http://aws.amazon.com/
+	http://aws.amazon.com/ec2/#pricing
+	http://aws.amazon.com/documentation/
+	http://docs.amazonwebservices.com/AWSEC2/latest/GettingStartedGuide/
+
+== Introduction
+
+Sign up for a new account and run a Linux/Unix Micro instance for free for a year.
+
+== Launch an Instance
+
+Follow the instructions in the Getting Started Guide to launch a new instance. These examples use the basic Linux instance.
+
+	Basic 32-bit Amazon Linux AMI 2011.02.1 Beta
+
+Create and download a new Key Pair. My key pair is called:
+
+	server001keypair.pem
+
+Create a new Security Group and enable inbound ports.
+
+	22 (SSH)
+	80 (HTTP)
+	443 (HTTPS)
+
+Select the new instance and get the Public DNS name. My DNS name is:
+
+	ec2-184-73-20-225.compute-1.amazonaws.com
+
+WARNING: The Public DNS name changes after stopping and starting the instance.
+
+== Connect to the Instance
+
+Login to the new instance.
+
+	ssh -i server001keypair.pem ec2-user@ec2-184-73-20-225.compute-1.amazonaws.com
+	sudo bash
+
+This did not work.
+
+	ssh -i server001keypair.pem root@ec2-184-73-20-225.compute-1.amazonaws.com
+		Please login as the ec2-user user rather than root user.
+
+== Take a look around
+
+	$ pwd
+	/home/ec2-user
+
+How much disk space is available?
+
+	$ df
+	Filesystem           1K-blocks      Used Available Use% Mounted on
+	/dev/xvda1             8256952    866996   7306072  11% /
+	tmpfs                   308508        40    308468   1% /dev/shm
+
+Make a list of installed packages.
+
+	$ yum list all > yum-all.000.txt	
+
+Make a list of all files on the disk. After installing new software, compare the latest files to this original list.
+
+	sudo find / -type f -print | grep -v ^/proc/ > find-all-files.000.txt
