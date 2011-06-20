@@ -1,0 +1,38 @@
+= Install Icecast streaming media server and Music Player Daemon (MPD)
+
+== Resources
+
+	http://www.icecast.org/
+	http://mpd.wikia.com/wiki
+
+== Introduction
+
+Build and install icecast, mpd, mpc and ncmpc.
+
+	/usr/local/bin/mpc
+	/usr/local/bin/mpd
+	/usr/local/bin/ncmpc
+	/usr/local/bin/icecast
+
+This example does not attempt to configure the software.
+
+== Install Capistrano on the EC2 server
+
+	cd   006_icecast/server
+	bash 001_install_capistrano.sh
+
+== Generate the example and deploy to he EC2 server
+
+Generate the example.
+
+	cd   006_icecast
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+
+Deploy the example with Capistrano and build the software (icecast, mpd, mpc and ncmpc).
+
+	bash 005_deploy.sh
+
+Delete the files and gemset.
+
+	bash 999_clean.sh

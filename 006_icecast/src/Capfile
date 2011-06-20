@@ -1,0 +1,32 @@
+require 'rubygems'
+require 'railsless-deploy'
+load 'config/deploy.rb' if respond_to?(:namespace)
+
+desc "Echo the server's hostname"
+task :echo_hostname do 
+  run "echo `hostname`"
+end
+
+desc "Echo the server's hostname"
+task :hostname do 
+  run "hostname"
+end
+
+desc "Echo the user's name"
+task :whoami do 
+  run "whoami"
+end
+
+desc "Echo the sudo user's name"
+task :sudo_whoami do 
+  run "sudo whoami"
+end
+
+task :yum_icecast do
+	run "sudo #{deploy_to}/current/scripts/yum_icecast.sh"
+end
+
+task :make_icecast do
+	run "sudo #{deploy_to}/current/scripts/download_icecast.sh"
+	run "sudo #{deploy_to}/current/scripts/make_icecast.sh"
+end
