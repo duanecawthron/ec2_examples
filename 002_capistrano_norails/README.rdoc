@@ -32,3 +32,14 @@ Deploy the example.
 Delete the files and gemset.
 
 	bash 999_clean.sh
+
+== ISSUE: you must have a tty to run sudo
+
+When running "cap sudo_whoami", I got this error.
+
+	sorry, you must have a tty to run sudo
+
+RESOLUTION
+
+	edit /etc/sudoers
+	comment out: # Default requiretty

@@ -12,4 +12,8 @@ cap deploy:setup
 cap deploy:check
 cap deploy:update
 
+# call some example tasks in src/Capfile
+cap echo_hostname
+cap hostname
 cap whoami
+cap sudo_whoami

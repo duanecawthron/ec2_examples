@@ -13,3 +13,6 @@ gem install capistrano --no-rdoc --no-ri
 
 sudo mkdir -p /u
 sudo chown ec2-user /u
+
+[ -f /etc/sudoers.orig ] || sudo cp -p /etc/sudoers /etc/sudoers.orig
+sudo vim -s comment_out_requiretty.vim /etc/sudoers
