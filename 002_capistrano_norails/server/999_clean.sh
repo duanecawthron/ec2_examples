@@ -2,10 +2,8 @@
 
 [ "$USER" = "ec2-user" ] || { echo ERROR: must run as ec2-user; exit 1; }
 
+source 000_config.sh
 source /etc/profile.d/rvm.sh
-
-# PROJECT must match client/000_config.sh
-PROJECT=norails
 
 # ---------------- delete files
 

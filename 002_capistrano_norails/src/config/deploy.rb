@@ -1,8 +1,8 @@
 # server side config
 # https://rvm.beginrescueend.com/integration/capistrano/
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
-require "rvm/capistrano"                # must be installed on server
-set :rvm_ruby_string, '1.8.7@norails'   # must be installed on server
+require "rvm/capistrano"                               # must be installed on server
+set :rvm_ruby_string, '1.8.7@norails'                  # must be installed on server
 
 set :application, "norails"
 
