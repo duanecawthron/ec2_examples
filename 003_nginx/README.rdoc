@@ -1,0 +1,30 @@
+= Install nginx HTTP server
+
+== Resources
+
+	http://wiki.nginx.org/
+
+== Introduction
+
+Install the nginx package and start the server.
+
+== Install Capistrano on the EC2 server
+
+	cd   002_capistrano_norails/server
+	bash 001_install_capistrano.sh
+
+== Generate the example and deploy to the EC2 server
+
+Generate the example.
+
+	cd   003_nginx
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+
+Deploy the example.
+
+	bash 005_deploy.sh
+
+Delete the files and gemset.
+
+	bash 999_clean.sh
