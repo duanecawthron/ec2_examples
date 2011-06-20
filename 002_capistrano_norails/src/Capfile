@@ -1,3 +1,10 @@
 require 'rubygems'
 require 'railsless-deploy'
 load 'config/deploy.rb' if respond_to?(:namespace)
+
+desc "Echo the user's name"
+task :whoami do 
+  run "whoami"
+  run "rvm current"
+  run "gem list"
+end

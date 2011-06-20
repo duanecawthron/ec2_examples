@@ -11,3 +11,5 @@ git commit -m'initial commit'
 cap deploy:setup
 cap deploy:check
 cap deploy:update
+
+cap whoami

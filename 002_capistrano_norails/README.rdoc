@@ -1,20 +1,23 @@
-= Deploy files to ec2 with capistrano and without rails
+= Deploy files to EC2 with Capistrano and without rails
 
 == Resources
 
 	https://github.com/capistrano/capistrano/
+	https://rvm.beginrescueend.com/integration/capistrano/
 	https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
 	http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
 	http://ryanflorence.com/deploying-with-capistrano-without-rails/
 
 == Introduction
 
+Capistrano is a Ruby program that can be used to deploy files to multiple servers and run scripts on the servers.
 
-== EC2 Configuration
+== Install Capistrano on the EC2 server
 
-	gem install capistrano -d
+	cd   002_capistrano_norails/server
+	bash 001_install_capistrano.sh
 
-== Execution
+== Generate the example and deploy to he EC2 server
 
 Generate the example.
 
