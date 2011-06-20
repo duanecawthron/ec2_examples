@@ -1,0 +1,82 @@
+Cloning into rvm...
+remote: Counting objects: 5011, done.
+remote: Compressing objects: 100% (2353/2353), done.
+remote: Total 5011 (delta 3247), reused 3603 (delta 1970)
+Receiving objects: 100% (5011/5011), 1.64 MiB, done.
+Resolving deltas: 100% (3247/3247), done.
+
+  RVM:  Shell scripts enabling management of multiple ruby environments.
+  RTFM: https://rvm.beginrescueend.com/
+  HELP: http://webchat.freenode.net/?channels=rvm (#rvm on irc.freenode.net)
+  
+Installing RVM to /usr/local/rvm//usr/local/rvm /usr/local/rvm/src/rvm
+/usr/local/rvm/src/rvm
+
+    Correct permissions for base binaries in /usr/local/rvm/bin...
+    Copying manpages into place.
+Creating RVM system user group 'rvm'
+Ensuring 'ec2-user' is in group 'rvm'
+Adding user 'ec2-user' to the RVM group 'rvm'
+
+
+Notes for Linux ( Amazon Linux AMI release 2011.02.1.1 (beta) )
+
+NOTE: 'ruby' represents Matz's Ruby Interpreter (MRI) (1.8.X, 1.9.X)
+             This is the *original* / standard Ruby Language Interpreter
+      'ree'  represents Ruby Enterprise Edition
+      'rbx'  represents Rubinius
+
+bash >= 3.2 is required
+curl is required
+git is required (>= 1.7 recommended)
+patch is required (for ree and some ruby-head's).
+
+If you wish to install rbx and/or Ruby 1.9 head (MRI) (eg. 1.9.2-head),
+then you must install and use rvm 1.8.7 first.
+
+If you wish to have the 'pretty colors' again,
+  set 'export rvm_pretty_print_flag=1' in ~/.rvmrc.
+
+dependencies:
+  # For RVM
+  rvm: yum install -y bash curl git # NOTE: For git you need the EPEL repository enabled
+
+  # For Ruby (MRI & Ree) you should install the following OS dependencies:
+  ruby: yum install -y gcc-c++ patch readline readline-devel zlib zlib-devel libyaml-devel libffi-devel openssl-devel ;
+        yum install -y make bzip2 ;
+        yum install -y iconv-devel # NOTE: For centos 5.4 final iconv-devel might not be available :(
+
+  # For JRuby (if you wish to use it) you will need:
+  jruby: yum install -y java
+
+For rbx (Rubinius) more than 600MB of free RAM required.
+
+
+Installation of RVM to /usr/local/rvm/ is complete.
+
+
+root,
+
+Thank you very much for using RVM! I sincerely hope that RVM helps to
+make your life both easier and more enjoyable.
+
+If you have any questions, issues and/or ideas for improvement please
+join#rvm on irc.freenode.net and let me know, note you must register
+(http://bit.ly/5mGjlm) and identify (/msg nickserv <nick> <pass>) to
+talk, this prevents spambots from ruining our day.
+
+My irc nickname is 'wayneeseguin' and I hang out in #rvm typically
+
+  ~09:00-17:00EDT and again from ~21:00EDT-~23:00EDT
+
+If I do not respond right away, please hang around after asking your
+question, I will respond as soon as I am back.  It is best to talk in
+#rvm itself as then other users can help out should I be offline.
+
+Be sure to get head often as rvm development happens fast,
+you can do this by running 'rvm get head' followed by 'rvm reload'
+or opening a new shell
+
+  w⦿‿⦿t
+
+    ~ Wayne

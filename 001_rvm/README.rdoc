@@ -1,0 +1,36 @@
+= Install Ruby Version Manager (RVM) and Ruby
+
+Use RVM to manage multiple versions of ruby and multiple sets of gems.
+
+Resources
+
+	https://rvm.beginrescueend.com/
+	https://rvm.beginrescueend.com/rvm/install/
+
+== Installation on Basic 32-bit Amazon Linux
+
+Follow the instructions on https://rvm.beginrescueend.com/rvm/install/ for Multi-User installation as root (for server administrators).
+
+	sudo bash
+	yum -y install git.i686
+	bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+
+RVM was installed here.
+
+	/etc/rvmrc
+	/etc/profile.d/rvm.sh
+	/usr/local/rvm/
+
+Change the owner of /usr/local/rvm if you plan to manage the gemsets as ec2-user (not root).
+
+	sudo chown -R ec2-user /usr/local/rvm
+
+== Commands
+
+Run this command to get help.
+
+	rvm usage
+
+This example has a list of common rvm commands.
+
+	https://github.com/duanecawthron/rails_examples/tree/master/006_rvm
