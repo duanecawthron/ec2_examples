@@ -1,4 +1,4 @@
-= Generate a simple rails application and deploy to ec2 with capistrano
+= Generate a simple rails application and deploy to EC2 with Capistrano
 
 == Resources
 
@@ -25,7 +25,7 @@
 
 Generate and run the example.
 
-	cd   001_capistrano
+	cd   005_capistrano
 	bash 001_install_gems.sh
 	bash 002_new_app.sh
 	bash 003_reset_database.sh
