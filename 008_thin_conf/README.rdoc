@@ -1,0 +1,28 @@
+= Configure Nginx and Thin
+
+== Resources
+
+	http://kevin.vanzonneveld.net/techblog/article/ruby_with_nginx_on_ubuntu_lucid/
+	http://www.beechtreetech.com/ruby-on-rails-thin-and-nginx-on-windows#steps
+
+== Introduction
+
+
+== Install Capistrano on the EC2 server
+
+Follow the instructions in 002_capistrano_norails.
+
+== Generate the example and deploy to the EC2 server
+
+Deploy the example with Capistrano and configure the software (nginx and thin).
+
+	cd 008_thin_conf
+	bash 005_deploy.sh
+
+Delete the files and gemset.
+
+	bash 999_clean.sh
+
+== Test the web server
+
+	http://ec2-184-73-20-225.compute-1.amazonaws.com

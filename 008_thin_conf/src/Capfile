@@ -1,0 +1,38 @@
+require 'rubygems'
+require 'railsless-deploy'
+load 'config/deploy.rb' if respond_to?(:namespace)
+
+desc "Setup Nginx and Thin"
+task :setup_thin do
+	run "sudo #{deploy_to}/current/scripts/setup_thin.sh"
+end
+
+desc "start nginx"
+task :start_nginx do
+	run "sudo /sbin/service nginx start"
+end
+
+desc "stop nginx"
+task :stop_nginx do
+	run "sudo /sbin/service nginx stop"
+end
+
+desc "restart nginx"
+task :restart_nginx do
+	run "sudo /sbin/service nginx restart"
+end
+
+desc "start thin"
+task :start_thin do
+	run "sudo /sbin/service thin start"
+end
+
+desc "stop thin"
+task :stop_thin do
+	run "sudo /sbin/service thin stop"
+end
+
+desc "restart thin"
+task :restart_thin do
+	run "sudo /sbin/service thin restart"
+end
