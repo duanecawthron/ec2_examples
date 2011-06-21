@@ -23,3 +23,11 @@ desc "Echo the sudo user's name"
 task :sudo_whoami do 
   run "sudo whoami"
 end
+
+desc "Main task called by 000_cap_deploy.sh"
+task :main do 
+  run "whoami"
+  run "rvm current"
+  run "gem list"
+end
+
