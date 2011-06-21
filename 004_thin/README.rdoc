@@ -39,6 +39,8 @@ Before using rvm, I installed rubygems, rails and thin like this.
 	yum -y install rubygems.noarch
 	gem install rails –platform=ruby
 	gem install thin –platform=ruby
+	gem install mysql
+	# not this one: gem install mysql –platform=ruby
 
 I am not sure why "–platform=ruby" was used. I don't think it is recognized.
 
@@ -49,7 +51,7 @@ When running "thin install", I got this error.
 	/usr/local/rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require':
 	 no such file to load -- openssl (LoadError)
 
-RESOLUTION
+SOLUTION
 
 From: http://groups.google.com/group/thin-ruby/browse_thread/thread/e30fc6d9f0dd2ee7
 

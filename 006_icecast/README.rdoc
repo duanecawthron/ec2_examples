@@ -39,3 +39,27 @@ Deploy the example with Capistrano and build the software (icecast, mpd, mpc and
 Delete the files and gemset.
 
 	bash 999_clean.sh
+
+== ISSUE: libmpdclient2 not found
+
+	cd mpc-0.20
+	./configure
+		configure: error: libmpdclient2 is required
+
+SOLUTION 1
+
+	cd libmpdclient-2.4
+	./configure --prefix=/usr
+
+SOLUTION 2
+
+	export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
+
+== ISSUE: libmpdclient2 not found
+
+	running mpc, it could not find libmpdclient2
+
+SOLUTION
+
+	cd libmpdclient-2.4
+	./configure --prefix=/usr

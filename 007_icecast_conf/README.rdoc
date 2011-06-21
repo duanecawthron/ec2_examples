@@ -33,3 +33,18 @@ Delete the files and gemset.
 
 	http://ec2-184-73-20-225.compute-1.amazonaws.com:8000/stream.mp3
 	http://ec2-184-73-20-225.compute-1.amazonaws.com:8080/stream.ogg
+
+== ISSUE: MPD prints error messages when it starts
+
+Start MPD
+
+	/usr/local/bin/mpd /etc/mpd.conf
+
+It starts with these messages:
+
+	listen: bind to '0.0.0.0:6600' failed: Address already in use (continuing anyway, because binding to '[::]:6600' succeeded)
+	Failed to load database: Database corrupted
+
+SOLUTION
+
+Ignore the messages. It works.

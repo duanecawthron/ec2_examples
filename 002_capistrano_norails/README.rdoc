@@ -42,7 +42,7 @@ When running "cap sudo_whoami", I got this error.
 
 	sorry, you must have a tty to run sudo
 
-RESOLUTION
+SOLUTION
 
 	edit /etc/sudoers
 	comment out: # Default requiretty
