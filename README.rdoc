@@ -14,6 +14,8 @@ These examples demonstrate how to install and manage software on EC2.
 000_new_instance:: Create a new server instance on EC2
 001_rvm:: Install Ruby Version Manager (RVM) and Ruby
 002_capistrano_norails:: Deploy files to EC2 with Capistrano and without rails
-003_nginx:: Install nginx HTTP server
+003_nginx:: Install Nginx HTTP server
+004_thin:: Install Thin Ruby on Rails Application Server
 005_capistrano:: Generate a simple rails application and deploy to EC2 with Capistrano
 006_icecast:: Install Icecast streaming media server and Music Player Daemon (MPD)
+007_icecast_conf:: Configure Icecast streaming media server and Music Player Daemon (MPD)
