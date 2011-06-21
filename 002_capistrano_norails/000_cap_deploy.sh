@@ -2,9 +2,10 @@
 #
 # usage: 000_cap_deploy.sh <folder>
 #
-# Use Capistrano to deploy a folder to a server and run the task named "main"
+# Use Capistrano to deploy a folder to a server and run a deploy.sh script
 #   <folder>/Capfile - must have a task named "main"
 #   <folder>/config/deploy.rb
+#   <folder>/scripts/deploy.sh
 #   <folder>/more_stuff
 #
 
@@ -12,6 +13,7 @@
 cd $1
 [ -f Capfile ] || { echo ERROR: cannot find Capfile in `pwd`; exit 1; }
 [ -f config/deploy.rb  ] || { echo ERROR: cannot find config/deploy.rb in `pwd`; exit 1; }
+[ -f scripts/deploy.sh  ] || { echo ERROR: cannot find scripts/deploy.sh in `pwd`; exit 1; }
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]]     && . "/usr/local/rvm/scripts/rvm" # Load system RVM function if found
 [[ -s "$HOME/.rvm/scripts/rvm" ]]         && . "$HOME/.rvm/scripts/rvm"     # Load user RVM function if found
@@ -33,6 +35,6 @@ cap deploy:setup
 cap deploy:check
 cap deploy:update
 
-# ---------------- call the main task
+# ---------------- call the deploy.sh script
 
-cap main
+./scripts/deploy.sh
