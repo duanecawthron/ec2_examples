@@ -1,4 +1,4 @@
-= Install nginx HTTP server
+= Install Nginx HTTP server
 
 == Resources
 
@@ -6,7 +6,7 @@
 
 == Introduction
 
-Install the nginx package and start the server.
+Install the Nginx package and start the server.
 
 == Install Capistrano on the EC2 server
 
