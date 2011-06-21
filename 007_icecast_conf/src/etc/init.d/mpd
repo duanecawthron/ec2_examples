@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+# Startup script for MPD
+#
+# chkconfig: 345 85 15
+# description: mpd
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+prog=mpd
+pidfile=${PIDFILE-/u/mpd/mpd.pid}
+RETVAL=0
+
+case "$1" in
+start)
+      # Start daemon.
+      echo -n "Starting $prog: "
+      /usr/local/bin/mpd /u/etc/mpd.conf
+      RETVAL=$?
+      echo
+      ;;
+stop)
+      echo -n $"Stopping $prog: "
+      kill `cat ${pidfile}`
+      RETVAL=$?
+      echo
+      [ $RETVAL = 0 ] && rm -f ${pidfile}
+      ;;
+restart)
+      $0 stop
+      $0 start
+      ;;
+*)
+      echo "Usage: $0 {start|stop|restart}"
+      exit 1
+esac
+
+exit $RETVAL
