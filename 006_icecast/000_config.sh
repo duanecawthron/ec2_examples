@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source server/000_config.sh
+PROJECT=icecast
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 rvm gemset use global
