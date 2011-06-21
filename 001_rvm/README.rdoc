@@ -7,13 +7,11 @@ Resources
 	https://rvm.beginrescueend.com/
 	https://rvm.beginrescueend.com/rvm/install/
 
-== Installation on Basic 32-bit Amazon Linux
+== Install RVM on Basic 32-bit Amazon Linux
 
 Follow the instructions on https://rvm.beginrescueend.com/rvm/install/ for Multi-User installation as root (for server administrators).
 
-	sudo bash
-	yum -y install git.i686
-	bash < <(curl -s https://rvm.beginrescueend.com/install/rvm)
+	000_install_rvm.sh
 
 RVM was installed here.
 
@@ -24,6 +22,10 @@ RVM was installed here.
 Change the owner of /usr/local/rvm if you plan to manage the gemsets as ec2-user (not root).
 
 	sudo chown -R ec2-user /usr/local/rvm
+
+== Install Ruby on Basic 32-bit Amazon Linux
+
+	001_instal_ruby.sh
 
 == Commands
 
