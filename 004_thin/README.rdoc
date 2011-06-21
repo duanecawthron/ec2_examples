@@ -1,0 +1,59 @@
+= Install Thin Ruby on Rails Application Server
+
+== Resources
+
+	http://kevin.vanzonneveld.net/techblog/article/ruby_with_nginx_on_ubuntu_lucid/
+	http://www.beechtreetech.com/ruby-on-rails-thin-and-nginx-on-windows#steps
+
+== Introduction
+
+Build and install Thin. This example does not attempt to configure the software.
+
+== Install Capistrano and Thin gems on the EC2 server
+
+	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-73-20-225.compute-1.amazonaws.com:/tmp
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-20-225.compute-1.amazonaws.com
+	cd   /tmp/server
+	bash 001_install_gems.sh
+
+== Generate the example and deploy to the EC2 server
+
+Generate the example.
+
+	cd   004_thin
+	bash 001_install_gems.sh
+	bash 002_new_app.sh
+
+Deploy the example with Capistrano and build the software (icecast, mpd, mpc and ncmpc).
+
+	bash 005_deploy.sh
+
+Delete the files and gemset.
+
+	bash 999_clean.sh
+
+== NOTE: Installing gems without rvm
+
+Before using rvm, I installed rubygems, rails and thin like this.
+
+	yum -y install rubygems.noarch
+	gem install rails –platform=ruby
+	gem install thin –platform=ruby
+
+I am not sure why "–platform=ruby" was used. I don't think it is recognized.
+
+== ISSUE: openssl LoadError
+
+When running "thin install", I got this error.
+
+	/usr/local/rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require':
+	 no such file to load -- openssl (LoadError)
+
+RESOLUTION
+
+From: http://groups.google.com/group/thin-ruby/browse_thread/thread/e30fc6d9f0dd2ee7
+
+	rvm package install zlib
+	rvm package install openssl		# required by thin
+	rvm remove 1.8.7
+	rvm install 1.8.7 --with-zlib-dir=$rvm_path/usr --with-openssl-dir=$rvm_path/usr

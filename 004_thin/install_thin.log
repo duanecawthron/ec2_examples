@@ -1,0 +1,15 @@
+>> Installing thin service at /etc/init.d/thin ...
+mkdir -p /etc/init.d
+writing /etc/init.d/thin
+chmod +x /etc/init.d/thin
+mkdir -p /etc/thin
+
+To configure thin to start at system boot:
+on RedHat like systems:
+  sudo /sbin/chkconfig --level 345 thin on
+on Debian-like systems (Ubuntu):
+  sudo /usr/sbin/update-rc.d -f thin defaults
+on Gentoo:
+  sudo rc-update add thin default
+
+Then put your config files in /etc/thin
