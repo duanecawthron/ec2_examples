@@ -19,3 +19,4 @@ These examples demonstrate how to install and manage software on EC2.
 005_capistrano:: Generate a simple rails application and deploy to EC2 with Capistrano
 006_icecast:: Install Icecast streaming media server and Music Player Daemon (MPD)
 007_icecast_conf:: Configure Icecast streaming media server and Music Player Daemon (MPD)
+008_thin_conf:: Configure Nginx and Thin
