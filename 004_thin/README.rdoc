@@ -21,7 +21,7 @@ Deploy the example with Capistrano.
 	cd   004_thin
 	bash 005_deploy.sh
 
-Delete the files.
+Delete the files and gemsets.
 
 	bash 999_clean.sh
 
