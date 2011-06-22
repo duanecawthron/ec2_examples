@@ -37,4 +37,4 @@ cap deploy:update
 
 # ---------------- call the deploy.sh script
 
-./scripts/deploy.sh
+[ -x ./scripts/deploy.sh ] && ./scripts/deploy.sh
