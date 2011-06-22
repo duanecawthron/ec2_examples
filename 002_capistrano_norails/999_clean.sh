@@ -11,5 +11,5 @@ rm -rf $TOP/tmp
 
 # ---------------- delete gemset
 
-rvm gemset use global
+rvm use 1.8.7@global
 rvm --force gemset delete norails

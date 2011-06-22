@@ -2,20 +2,12 @@
 
 [ "$USER" = "ec2-user" ] || { echo ERROR: must run as ec2-user; exit 1; }
 
-source 000_config.sh
-source /etc/profile.d/rvm.sh
-
-rvm use 1.8.7
-rvm gemset use global
-rvm gemset create $PROJECT
-rvm use 1.8.7@$PROJECT
-
-gem install capistrano --no-rdoc --no-ri
-
+# create the folder where we will deploy apps
 sudo mkdir -p /u
 sudo chown ec2-user /u
 
 if [ ! -f /etc/sudoers.orig ]; then
+	# comment out Default requiretty to avoid "sorry, you must have a tty to run sudo"
 	sudo cp -p /etc/sudoers /etc/sudoers.orig
 	sudo vim -s comment_out_requiretty.vim /etc/sudoers
 fi

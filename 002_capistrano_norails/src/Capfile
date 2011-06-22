@@ -24,10 +24,9 @@ task :sudo_whoami do
   run "sudo whoami"
 end
 
-desc "Main task called by 000_cap_deploy.sh"
-task :main do 
-  run "whoami"
-  run "rvm current"
-  run "gem list"
+desc "create a new gemset and add capistrano"
+task :new_gemset do
+	run "#{deploy_to}/current/scripts/new_gemset.sh"
 end
+
 

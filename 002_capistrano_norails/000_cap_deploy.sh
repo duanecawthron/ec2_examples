@@ -13,7 +13,6 @@
 cd $1
 [ -f Capfile ] || { echo ERROR: cannot find Capfile in `pwd`; exit 1; }
 [ -f config/deploy.rb  ] || { echo ERROR: cannot find config/deploy.rb in `pwd`; exit 1; }
-[ -f scripts/deploy.sh  ] || { echo ERROR: cannot find scripts/deploy.sh in `pwd`; exit 1; }
 
 [[ -s "/usr/local/rvm/scripts/rvm" ]]     && . "/usr/local/rvm/scripts/rvm" # Load system RVM function if found
 [[ -s "$HOME/.rvm/scripts/rvm" ]]         && . "$HOME/.rvm/scripts/rvm"     # Load user RVM function if found
