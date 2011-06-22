@@ -16,7 +16,7 @@ set :deploy_via, :copy
 set :copy_exclude, [".git", ".DS_Store"]
 set :keep_releases, 2
 
-set :location, "ec2-50-17-56-198.compute-1.amazonaws.com"
+set :location, "ec2-184-73-84-106.compute-1.amazonaws.com"
 role :app, location
 role :web, location
 role :db,  location, :primary => true

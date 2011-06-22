@@ -9,6 +9,7 @@ end
 
 desc "install Thin gem"
 task :install_thin_gem do
+	#run "gem install rails --no-rdoc --no-ri"
 	run "gem install thin --no-rdoc --no-ri"
 end
 

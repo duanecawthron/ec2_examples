@@ -2,7 +2,7 @@
 # https://rvm.beginrescueend.com/integration/capistrano/
 $:.unshift(File.expand_path('./lib', ENV['rvm_path'])) # Add RVM's lib directory to the load path.
 require "rvm/capistrano"                               # must be installed on server
-set :rvm_ruby_string, '1.8.7@norails'                  # must be installed on server
+set :rvm_ruby_string, '1.8.7@thin'                     # must be installed on server
 
 set :application, "thin_conf"
 
@@ -16,7 +16,7 @@ set :deploy_via, :copy
 set :copy_exclude, [".git", ".DS_Store"]
 set :keep_releases, 2
 
-set :location, "ec2-50-17-56-198.compute-1.amazonaws.com"
+set :location, "ec2-184-73-84-106.compute-1.amazonaws.com"
 role :app, location
 role :web, location
 role :db,  location, :primary => true

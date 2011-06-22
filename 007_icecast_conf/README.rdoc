@@ -31,8 +31,8 @@ Delete the files and gemset.
 
 == Use VLC to test the stream
 
-	http://ec2-50-17-56-198.compute-1.amazonaws.com:8000/stream.mp3
-	http://ec2-50-17-56-198.compute-1.amazonaws.com:8080/stream.ogg
+	http://ec2-184-73-84-106.compute-1.amazonaws.com:8000/stream.mp3
+	http://ec2-184-73-84-106.compute-1.amazonaws.com:8080/stream.ogg
 
 == ISSUE: MPD prints error messages when it starts
 

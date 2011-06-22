@@ -7,4 +7,5 @@
 
 rvm use 1.8.7@thin
 
+rm -f /etc/rc.d/init.d/thin
 thin install
