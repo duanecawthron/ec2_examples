@@ -15,16 +15,11 @@ Install the Nginx package and start the server.
 
 == Generate the example and deploy to the EC2 server
 
-Generate the example.
+Deploy the example with Capistrano.
 
 	cd   003_nginx
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-
-Deploy the example.
-
 	bash 005_deploy.sh
 
-Delete the files and gemset.
+Delete the files.
 
 	bash 999_clean.sh
