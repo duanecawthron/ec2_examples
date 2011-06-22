@@ -1,19 +1,9 @@
 #!/bin/bash
 
-source 000_config.sh
+TOP=`dirname $0`
+cd $TOP
 
-# ---------------- https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
+rm -rf tmp
+cp -pr src tmp
+../002_capistrano_norails/000_cap_deploy.sh tmp
 
-git init
-git add .
-git commit -m'initial commit'
-
-cap deploy:setup
-cap deploy:check
-cap deploy:update
-
-# call some example tasks in src/Capfile
-cap echo_hostname
-cap hostname
-cap whoami
-cap sudo_whoami

@@ -16,7 +16,7 @@ Follow the instructions in 002_capistrano_norails.
 
 Deploy the example with Capistrano and configure the software (nginx and thin).
 
-	cd 008_thin_conf
+	cd   008_thin_conf
 	bash 005_deploy.sh
 
 Delete the files and gemset.
