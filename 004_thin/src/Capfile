@@ -14,5 +14,5 @@ end
 
 desc "install Thin"
 task :install_thin do
-	run "thin install"
+	run "sudo #{deploy_to}/current/scripts/thin_install.sh"
 end
