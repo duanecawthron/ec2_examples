@@ -11,7 +11,11 @@ Resources
 
 Follow the instructions on https://rvm.beginrescueend.com/rvm/install/ for Multi-User installation as root (for server administrators).
 
-	000_install_rvm.sh
+	cd 001_rvm
+	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-50-17-56-198.compute-1.amazonaws.com:/tmp
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-50-17-56-198.compute-1.amazonaws.com
+	cd   /tmp/server
+	bash 000_install_rvm.sh
 
 RVM was installed here.
 
@@ -25,7 +29,7 @@ Change the owner of /usr/local/rvm if you plan to manage the gemsets as ec2-user
 
 == Install Ruby on Basic 32-bit Amazon Linux
 
-	001_instal_ruby.sh
+	bash 001_instal_ruby.sh
 
 == Commands
 
