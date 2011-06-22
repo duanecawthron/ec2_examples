@@ -11,8 +11,8 @@ Build and install Thin. This example does not attempt to configure the software.
 
 == Install Capistrano and Thin gems on the EC2 server
 
-	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-73-20-225.compute-1.amazonaws.com:/tmp
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-20-225.compute-1.amazonaws.com
+	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-50-17-56-198.compute-1.amazonaws.com:/tmp
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-50-17-56-198.compute-1.amazonaws.com
 	cd   /tmp/server
 	bash 001_install_gems.sh
 
