@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PROJECT=capistrano
+PROJECT=myapp
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 rvm gemset use global

@@ -1,13 +1,8 @@
 #!/bin/bash
 
-source 000_config.sh
+TOP=`dirname $0`
+cd $TOP
 
-# ---------------- https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
-
-git init
-git add .
-git commit -m'initial commit'
-
-cap deploy:setup
-cap deploy:check
-cap deploy:update
+cp -pr src/scripts tmp/myapp
+../002_capistrano_norails/100_new_gemset.sh myapp
+../002_capistrano_norails/000_cap_deploy.sh tmp/myapp

@@ -9,23 +9,21 @@
 
 == Introduction
 
+This example generates a simple rails application, adds Capistrano and deploys the application to an EC2 server.
 
-== EC2 and Thin Configuration
+== EC2, Nginx and Thin Configuration
 
-	yum install sqlite-devel.i686
-	gem install sqlite3 -d
-	gem install capistrano -d
+Setup the server using these examples.
 
-	service thin stop
-	mv /etc/thin /etc/thin.1
-	thin config -C /etc/thin/current -c /var/www/current --servers 3 -e development
-	service thin start
+	003_nginx
+	004_thin
+	005_thin_conf
 
 == Execution
 
 Generate and run the example.
 
-	cd   005_capistrano
+	cd   008_capistrano
 	bash 001_install_gems.sh
 	bash 002_new_app.sh
 	bash 003_reset_database.sh
