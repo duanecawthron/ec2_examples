@@ -29,9 +29,13 @@ Generate and run the example.
 	bash 003_reset_database.sh
 	bash 004_rails_server.sh
 
-Deploy the application.
+Deploy the application after installing yum packages and the gemset.
 
 	bash 005_deploy.sh
+
+Deploy the application only. Do not reinstall the yum packages or gemset.
+
+	bash 006_redeploy.sh
 
 Delete the local database, files and gemset.
 

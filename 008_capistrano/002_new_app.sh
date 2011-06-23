@@ -17,8 +17,11 @@ cp ../Gemfile.lock .
 
 # ---------------- https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
 
-cd  $TOP/tmp/myapp
+# do not run capify since we replace the files
+#   capify .
+# creates
+#   Capfile
+#   config/deploy.rb
 
-capify .
 cp $TOP/src/Capfile $TOP/tmp/myapp
 cp $TOP/src/config/deploy.rb $TOP/tmp/myapp/config/deploy.rb
