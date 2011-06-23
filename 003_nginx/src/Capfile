@@ -9,15 +9,15 @@ end
 
 desc "start nginx"
 task :start_nginx do
-	run "sudo service nginx start"
+	run "sudo /sbin/service nginx start"
 end
 
 desc "stop nginx"
 task :stop_nginx do
-	run "sudo service nginx stop"
+	run "sudo /sbin/service nginx stop"
 end
 
 desc "restart nginx"
 task :restart_nginx do
-	run "sudo service nginx restart"
+	run "sudo /sbin/service nginx restart"
 end
