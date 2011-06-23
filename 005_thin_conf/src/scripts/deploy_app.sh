@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# ---------------- install Nginx and Thin config files
-
-cap setup
-
 # ---------------- restart Nginx and Thin
 #
 # NOTE: Thin will not start unless 

@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# ---------------- install gems
-
-cap setup
-
 # ---------------- restart Nginx and Thin
 #
 # NOTE: Thin will not start unless 

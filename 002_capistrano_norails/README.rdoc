@@ -12,23 +12,61 @@
 
 Capistrano is a Ruby program that can be used to deploy files to multiple servers and run scripts on the servers.
 
-== Install Capistrano on the EC2 server
+There are several parts to this example. Some of the same scripts are used by multiple parts.
+
+= Part 1: Install Capistrano on the EC2 server
+
+Copy the scripts to the server.
 
 	cd   002_capistrano_norails
 	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com:/tmp
+
+Login to the server and run the scripts.
+
 	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com
 	cd   /tmp/src/scripts
 	bash new_gemset.sh
 	bash setup.sh
 
-== Generate the example and deploy to the EC2 server
+= Part 2: 100_new_gemset.sh will be used by other examples to create gemsets on the server
 
-Deploy the example with Capistrano.
+Use Capistrano to create a new gemset and add capistrano to the new gemset.
+
+	usage: 100_new_gemset.sh.sh <gemset>
+
+= Part 3: 000_cap_deploy.sh will be used by other examples to deploy applications
+
+Use Capistrano to deploy a folder to the server and run deployment scripts
+
+	usage: 000_cap_deploy.sh <folder>
+
+The script expects to find these files in the folder.
+
+	<folder>/Capfile					# (required) Capistrano configuration
+	<folder>/config/deploy.rb			# (required) Capistrano configuration
+	<folder>/scripts/deploy_gems.sh		# (optional) install yum packages and gems on the server
+	<folder>/scripts/deploy_app.sh		# (optional) install the appllicatin on the server
+	<folder>/more_stuff					# (optional)
+
+After the files have been copied, these two scripts will be called if they exist.
+
+	scripts/deploy_gems.sh
+	scripts/deploy_app.sh
+
+The scripts can be used for any purpose. By convention deploy_gems.sh is used to setup the environment for the application by installing yum packages and Ruby gems. Once the environment exists, deploy_app.sh can be called many times to redeploy the application.
+
+These scripts are called on the local computer. The are in the scripts folder for convenience. It may be confusing that they are copied to the server. Yet, they are not called on the server.
+
+To run scripts on the server, deploy_gems.sh and deploy_app.sh call Capistrano tasks in the Capfile. These tasks run on the server.
+
+= Part 4: Deploy a folder of files to the EC2 server
+
+Now that the environment is in place, we can deploy some files to the EC2 server. The files in the src folder will be coped to /u/norails/current.
 
 	cd   002_capistrano_norails
 	bash 005_deploy.sh
 
-Delete the files and gemset.
+Delete the local files and gemset.
 
 	bash 999_clean.sh
 

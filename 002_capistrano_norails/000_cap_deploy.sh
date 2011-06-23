@@ -2,10 +2,11 @@
 #
 # usage: 000_cap_deploy.sh <folder>
 #
-# Use Capistrano to deploy a folder to a server and run a deploy.sh script
-#   <folder>/Capfile - must have a task named "main"
-#   <folder>/config/deploy.rb
-#   <folder>/scripts/deploy.sh
+# Use Capistrano to deploy a folder to a server and run deployment scripts
+#   <folder>/Capfile					# (required) Capistrano configuration
+#   <folder>/config/deploy.rb			# (required) Capistrano configuration
+#   <folder>/scripts/deploy_gems.sh		# (optional) install yum packages and gems on the server
+#   <folder>/scripts/deploy_app.sh		# (optional) install the appllicatin on the server
 #   <folder>/more_stuff
 #
 
@@ -34,6 +35,10 @@ cap deploy:setup
 cap deploy:check
 cap deploy:update
 
-# ---------------- call the deploy.sh script
+# ---------------- install yum packages and gems on the server
 
-[ -x ./scripts/deploy.sh ] && ./scripts/deploy.sh
+[ -x ./scripts/deploy_gems.sh ] && ./scripts/deploy_gems.sh
+
+# ---------------- install the appllicatin on the server
+
+[ -x ./scripts/deploy_app.sh ] && ./scripts/deploy_app.sh
