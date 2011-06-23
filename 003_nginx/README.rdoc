@@ -20,6 +20,6 @@ Deploy the example with Capistrano.
 	cd   003_nginx
 	bash 005_deploy.sh
 
-Delete the files.
+Delete the local files.
 
 	bash 999_clean.sh

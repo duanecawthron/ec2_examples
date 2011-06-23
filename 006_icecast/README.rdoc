@@ -28,7 +28,7 @@ Deploy the example with Capistrano and build the software (icecast, mpd, mpc and
 	cd   006_icecast
 	bash 005_deploy.sh
 
-Delete the files.
+Delete the local files.
 
 	bash 999_clean.sh
 

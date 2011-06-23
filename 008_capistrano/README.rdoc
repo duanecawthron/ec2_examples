@@ -33,6 +33,6 @@ Deploy the application.
 
 	bash 005_deploy.sh
 
-Delete the database, files and gemset.
+Delete the local database, files and gemset.
 
 	bash 999_clean.sh
