@@ -2,18 +2,12 @@ require 'rubygems'
 require 'railsless-deploy'
 load 'config/deploy.rb' if respond_to?(:namespace)
 
-desc "yum install packages required by Thin"
-task :yum_thin do
-	run "sudo #{deploy_to}/current/scripts/yum_thin.sh"
+desc "Install Thin Gemset"
+task :setup do
+	run "#{deploy_to}/current/scripts/setup.sh"
 end
 
-desc "install Thin gem"
-task :install_thin_gem do
-	#run "gem install rails --no-rdoc --no-ri"
-	run "gem install thin --no-rdoc --no-ri"
-end
-
-desc "install Thin"
-task :install_thin do
+desc "Install Thin Server"
+task :thin_install do
 	run "sudo #{deploy_to}/current/scripts/thin_install.sh"
 end
