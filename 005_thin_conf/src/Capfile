@@ -3,8 +3,8 @@ require 'railsless-deploy'
 load 'config/deploy.rb' if respond_to?(:namespace)
 
 desc "Setup Nginx and Thin"
-task :setup_thin do
-	run "sudo #{deploy_to}/current/scripts/setup_thin.sh"
+task :setup do
+	run "#{deploy_to}/current/scripts/setup.sh"
 end
 
 desc "start nginx"
@@ -24,15 +24,15 @@ end
 
 desc "start thin"
 task :start_thin do
-	run "sudo /sbin/service thin start"
+	run "#{deploy_to}/current/scripts/start_thin.sh"
 end
 
 desc "stop thin"
 task :stop_thin do
-	run "sudo /sbin/service thin stop"
+	run "#{deploy_to}/current/scripts/stop_thin.sh"
 end
 
 desc "restart thin"
 task :restart_thin do
-	run "sudo /sbin/service thin restart"
+	run "#{deploy_to}/current/scripts/restart_thin.sh"
 end

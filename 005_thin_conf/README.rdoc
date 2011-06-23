@@ -7,6 +7,10 @@
 
 == Introduction
 
+This example creates the myapp gemset and installs the Nginx and Thin config files.
+
+	/etc/nginx/conf.d/myapp.conf
+	/etc/thin/myapp
 
 == Install Capistrano on the EC2 server
 
@@ -16,7 +20,7 @@ Follow the instructions in 002_capistrano_norails.
 
 Deploy the example with Capistrano and configure the software (nginx and thin).
 
-	cd   008_thin_conf
+	cd   005_thin_conf
 	bash 005_deploy.sh
 
 Delete the files and gemset.
@@ -26,3 +30,44 @@ Delete the files and gemset.
 == Test the web server
 
 	http://ec2-184-73-84-106.compute-1.amazonaws.com
+
+== ISSUE: Could not find RubyGem thin
+
+When running "service thin start", it shows this error.
+
+	/usr/local/rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems.rb:900:in `report_activate_error':
+	Could not find RubyGem thin (>= 0) (Gem::LoadError)
+
+SOLUTION
+
+Add this to /etc/init.d/thin.
+
+	[[ -s "/usr/local/rvm/scripts/rvm" ]]     && . "/usr/local/rvm/scripts/rvm" # Load system RVM function if found
+	[[ -s "$HOME/.rvm/scripts/rvm" ]]         && . "$HOME/.rvm/scripts/rvm"     # Load user RVM function if found
+	rvm use 1.8.7@myapp
+
+== ISSUE: No adapter found
+
+When running "service thin start", it says that it starts. But, no processes are running. The log shows this error.
+
+	cat /u/myapp/current/log/thin.3000.log
+	>> Writing PID to tmp/pids/thin.3000.pid
+	No adapter found for /u/myapp/current
+	>> Exiting!
+
+SOLUTION
+
+Thin must be configured to chdir to a valid rails directory.
+
+	-c, --chdir DIR                  Change to dir before starting
+
+== ISSUE: wrong version of rack
+
+When running "service thin start", it says that it starts. But, no processes are running. The log shows this error.
+
+	cat /u/myapp/current/log/thin.3000.log
+	You have already activated rack 1.3.0, but your Gemfile requires rack 1.2.3.
+
+SOLUTION
+
+Rack 1.3.0 was installed when Thin was installed. Make a Gemfile with thin and rack 1.2.3. Use bundler to install the correct versions.
