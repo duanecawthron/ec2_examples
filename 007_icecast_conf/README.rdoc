@@ -8,24 +8,21 @@
 
 == Introduction
 
+Install the configuration files for Icecast.
 
-== Install Capistrano on the EC2 server (use norails gemset)
+== Install Capistrano on the EC2 server
 
-Follow the instructions in 002_capistrano_norails.
+	cd   002_capistrano_norails/server
+	bash 001_install_capistrano.sh
 
 == Generate the example and deploy to the EC2 server
 
-Generate the example.
-
-	cd   007_icecast_conf
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-
 Deploy the example with Capistrano and configure the software (icecast, mpd, mpc and ncmpc).
 
+	cd   007_icecast_conf
 	bash 005_deploy.sh
 
-Delete the files and gemset.
+Delete the files.
 
 	bash 999_clean.sh
 
