@@ -34,11 +34,11 @@ Use Capistrano to create a new gemset and add capistrano to the new gemset.
 
 	usage: 100_new_gemset.sh.sh <gemset>
 
-= Part 3: 100_cap_deploy.sh will be used by other examples to deploy applications
+= Part 3: 101_cap_deploy.sh will be used by other examples to deploy applications
 
 Use Capistrano to deploy a folder to the server and run deployment scripts
 
-	usage: 100_cap_deploy.sh <folder>
+	usage: 101_cap_deploy.sh <folder>
 
 The script expects to find these files in the folder.
 

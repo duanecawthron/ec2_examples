@@ -8,4 +8,4 @@ cd $TOP
 rm -rf tmp
 cp -pr src tmp
 ../002_capistrano_norails/100_new_gemset.sh myapp
-../002_capistrano_norails/100_cap_deploy.sh tmp
+../002_capistrano_norails/101_cap_deploy.sh tmp

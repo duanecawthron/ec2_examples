@@ -12,5 +12,5 @@ sudo chown ec2-user /u
 if [ ! -f /etc/sudoers.orig ]; then
 	# comment out Default requiretty to avoid "sorry, you must have a tty to run sudo"
 	sudo cp -p /etc/sudoers /etc/sudoers.orig
-	sudo vim -s $TOP/comment_out_requiretty.vim /etc/sudoers
+	sudo vim -s $TOP/comment_out_requiretty.vim /etc/sudoers > /dev/null 2>&1
 fi
