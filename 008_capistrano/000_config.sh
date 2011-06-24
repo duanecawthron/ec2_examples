@@ -9,6 +9,8 @@ rvm gemset use global
 rvm gemset create $PROJECT
 rvm use 1.8.7@$PROJECT
 
-TOP=`pwd`
+TOP=`dirname $0`
+[ "$TOP" = "." ] && TOP=`pwd`
+
 mkdir -p $TOP/tmp/myapp
 cd $TOP/tmp/myapp

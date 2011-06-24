@@ -3,6 +3,7 @@
 [ "$USER" = "root" ] || { echo ERROR: must run as root; exit 1; }
 
 TOP=`dirname $0`
+[ "$TOP" = "." ] && TOP=`pwd`
 cd $TOP/..
 TOP=`pwd`
 

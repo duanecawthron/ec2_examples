@@ -1,6 +1,8 @@
 #!/bin/bash
 
 TOP=`dirname $0`
+[ "$TOP" = "." ] && TOP=`pwd`
+
 cd $TOP
 
 cp -pr src/scripts tmp/myapp
