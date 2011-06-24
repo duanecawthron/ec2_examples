@@ -19,11 +19,11 @@ There are several parts to this example. Some of the same scripts are used by mu
 Copy the scripts to the server.
 
 	cd   002_capistrano_norails
-	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com:/tmp
+	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com:/tmp
 
 Login to the server and run the scripts.
 
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com
 	cd   /tmp/src/scripts
 	bash new_gemset.sh
 	bash setup.sh
@@ -34,11 +34,11 @@ Use Capistrano to create a new gemset and add capistrano to the new gemset.
 
 	usage: 100_new_gemset.sh.sh <gemset>
 
-= Part 3: 000_cap_deploy.sh will be used by other examples to deploy applications
+= Part 3: 100_cap_deploy.sh will be used by other examples to deploy applications
 
 Use Capistrano to deploy a folder to the server and run deployment scripts
 
-	usage: 000_cap_deploy.sh <folder>
+	usage: 100_cap_deploy.sh <folder>
 
 The script expects to find these files in the folder.
 

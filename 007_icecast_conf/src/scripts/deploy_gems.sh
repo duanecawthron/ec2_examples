@@ -13,5 +13,5 @@ cap play_test_song
 # ---------------- Use VLC to test the stream
 
 echo Use VLC to test the stream
-echo http://ec2-184-73-84-106.compute-1.amazonaws.com:8000/stream.mp3
-echo http://ec2-184-73-84-106.compute-1.amazonaws.com:8080/stream.ogg
+echo http://ec2-184-73-143-111.compute-1.amazonaws.com:8000/stream.mp3
+echo http://ec2-184-73-143-111.compute-1.amazonaws.com:8080/stream.ogg

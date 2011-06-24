@@ -9,4 +9,4 @@ cap yum_nginx
 cap start_nginx
 
 echo Browse to:
-echo http://ec2-184-73-84-106.compute-1.amazonaws.com
+echo http://ec2-184-73-143-111.compute-1.amazonaws.com

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# usage: 000_cap_deploy.sh <folder>
+# usage: 100_cap_deploy.sh <folder>
 #
 # Use Capistrano to deploy a folder to a server and run deployment scripts
 #   <folder>/Capfile					# (required) Capistrano configuration

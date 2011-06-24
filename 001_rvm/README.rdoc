@@ -12,8 +12,8 @@ Resources
 Follow the instructions on https://rvm.beginrescueend.com/rvm/install/ for Multi-User installation as root (for server administrators).
 
 	cd 001_rvm
-	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com:/tmp
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-84-106.compute-1.amazonaws.com
+	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com:/tmp
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com
 	cd   /tmp/server
 	sudo bash 000_install_rvm.sh; bash 001_instal_ruby.sh
 
