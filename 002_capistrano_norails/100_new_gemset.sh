@@ -19,5 +19,6 @@ cat << EOF > tmp/scripts/deploy_gems.sh
 #!/bin/bash
 cap new_gemset
 EOF
+chmod 775 tmp/scripts/deploy_gems.sh
 
 ../002_capistrano_norails/101_cap_deploy.sh tmp
