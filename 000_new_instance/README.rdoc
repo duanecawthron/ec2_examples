@@ -29,7 +29,7 @@ Create a new Security Group and enable inbound ports.
 
 Select the new instance and get the Public DNS name. My DNS name is:
 
-	ec2-184-73-143-111.compute-1.amazonaws.com
+	ec2-184-72-84-255.compute-1.amazonaws.com
 
 WARNING: The Public DNS name changes after stopping and starting the instance.
 
@@ -37,12 +37,12 @@ WARNING: The Public DNS name changes after stopping and starting the instance.
 
 Login to the new instance.
 
-	ssh -i server001keypair.pem ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com
+	ssh -i server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
 	sudo bash
 
 This did not work.
 
-	ssh -i server001keypair.pem root@ec2-184-73-143-111.compute-1.amazonaws.com
+	ssh -i server001keypair.pem root@ec2-184-72-84-255.compute-1.amazonaws.com
 		Please login as the ec2-user user rather than root user.
 
 == Take a look around

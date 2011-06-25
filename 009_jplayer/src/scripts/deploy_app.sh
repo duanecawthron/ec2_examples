@@ -11,4 +11,4 @@ cap restart_nginx
 cap restart_thin
 
 echo Browse to:
-echo http://ec2-184-73-143-111.compute-1.amazonaws.com
+echo http://ec2-184-72-84-255.compute-1.amazonaws.com

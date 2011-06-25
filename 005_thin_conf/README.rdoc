@@ -29,7 +29,7 @@ Delete the local files and gemset.
 
 == Test the web server
 
-	http://ec2-184-73-143-111.compute-1.amazonaws.com
+	http://ec2-184-72-84-255.compute-1.amazonaws.com
 
 == ISSUE: Could not find RubyGem thin
 

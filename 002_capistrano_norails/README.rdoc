@@ -19,11 +19,11 @@ There are several parts to this example. Some of the same scripts are used by mu
 Copy the scripts to the server.
 
 	cd   002_capistrano_norails
-	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com:/tmp
+	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com:/tmp
 
 Login to the server and run the scripts.
 
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-73-143-111.compute-1.amazonaws.com
+	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
 	cd   /tmp/src/scripts
 	bash new_gemset.sh
 	bash setup.sh

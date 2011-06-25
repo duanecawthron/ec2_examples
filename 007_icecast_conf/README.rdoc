@@ -28,8 +28,8 @@ Delete the local files.
 
 == Use VLC to test the stream
 
-	http://ec2-184-73-143-111.compute-1.amazonaws.com:8000/stream.mp3
-	http://ec2-184-73-143-111.compute-1.amazonaws.com:8080/stream.ogg
+	http://ec2-184-72-84-255.compute-1.amazonaws.com:8000/stream.mp3
+	http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/stream.ogg
 
 == ISSUE: MPD prints error messages when it starts
 
