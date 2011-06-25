@@ -29,7 +29,6 @@ bash 999_clean.sh
 
 cd   $TOP/004_thin
 bash 005_deploy.sh
-
 bash 999_clean.sh
 
 cd   $TOP/005_thin_conf
