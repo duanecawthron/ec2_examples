@@ -7,6 +7,7 @@
 #       the gemset must have all required gems
 #
 
+cap config
 cap restart_nginx
 cap restart_thin
 
