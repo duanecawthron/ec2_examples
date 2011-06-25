@@ -1,4 +1,4 @@
 #!/bin/bash
 
 cap setup
-cap install_thin
+cap thin_install

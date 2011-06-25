@@ -31,6 +31,12 @@ Delete the local files.
 	http://ec2-184-72-84-255.compute-1.amazonaws.com:8000/stream.mp3
 	http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/stream.ogg
 
+== View the Admin Interface
+
+	http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/admin/stats.xsl
+	username: admin
+	password: hackme
+
 == ISSUE: MPD prints error messages when it starts
 
 Start MPD
