@@ -4,8 +4,8 @@ These examples are experiments used to learn about EC2.
 
 == Resources
 
-	http://aws.amazon.com/
-	http://aws.amazon.com/documentation/
+    http://aws.amazon.com/
+    http://aws.amazon.com/documentation/
 
 == EC2 Examples
 

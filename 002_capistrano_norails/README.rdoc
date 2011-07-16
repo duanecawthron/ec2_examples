@@ -2,11 +2,11 @@
 
 == Resources
 
-	https://github.com/capistrano/capistrano/
-	https://rvm.beginrescueend.com/integration/capistrano/
-	https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
-	http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
-	http://ryanflorence.com/deploying-with-capistrano-without-rails/
+    https://github.com/capistrano/capistrano/
+    https://rvm.beginrescueend.com/integration/capistrano/
+    https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
+    http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
+    http://ryanflorence.com/deploying-with-capistrano-without-rails/
 
 == Introduction
 
@@ -18,40 +18,40 @@ There are several parts to this example. Some of the same scripts are used by mu
 
 Copy the scripts to the server.
 
-	cd   002_capistrano_norails
-	scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com:/tmp
+    cd   002_capistrano_norails
+    scp -r -i ~/.ssh/server001keypair.pem src ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com:/tmp
 
 Login to the server and run the scripts.
 
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
-	cd   /tmp/src/scripts
-	bash new_gemset.sh
-	bash setup.sh
+    ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
+    cd   /tmp/src/scripts
+    bash new_gemset.sh
+    bash setup.sh
 
 = Part 2: 100_new_gemset.sh will be used by other examples to create gemsets on the server
 
 Use Capistrano to create a new gemset and add capistrano to the new gemset.
 
-	usage: 100_new_gemset.sh.sh <gemset>
+    usage: 100_new_gemset.sh.sh <gemset>
 
 = Part 3: 101_cap_deploy.sh will be used by other examples to deploy applications
 
 Use Capistrano to deploy a folder to the server and run deployment scripts
 
-	usage: 101_cap_deploy.sh <folder>
+    usage: 101_cap_deploy.sh <folder>
 
 The script expects to find these files in the folder.
 
-	<folder>/Capfile					# (required) Capistrano configuration
-	<folder>/config/deploy.rb			# (required) Capistrano configuration
-	<folder>/scripts/deploy_gems.sh		# (optional) install yum packages and gems on the server
-	<folder>/scripts/deploy_app.sh		# (optional) install the appllicatin on the server
-	<folder>/more_stuff					# (optional)
+    <folder>/Capfile                    # (required) Capistrano configuration
+    <folder>/config/deploy.rb           # (required) Capistrano configuration
+    <folder>/scripts/deploy_gems.sh     # (optional) install yum packages and gems on the server
+    <folder>/scripts/deploy_app.sh      # (optional) install the appllicatin on the server
+    <folder>/more_stuff                 # (optional)
 
 After the files have been copied, these two scripts will be called if they exist.
 
-	scripts/deploy_gems.sh
-	scripts/deploy_app.sh
+    scripts/deploy_gems.sh
+    scripts/deploy_app.sh
 
 The scripts can be used for any purpose. By convention deploy_gems.sh is used to setup the environment for the application by installing yum packages and Ruby gems. Once the environment exists, deploy_app.sh can be called many times to redeploy the application.
 
@@ -63,20 +63,20 @@ To run scripts on the server, deploy_gems.sh and deploy_app.sh call Capistrano t
 
 Now that the environment is in place, we can deploy some files to the EC2 server. The files in the src folder will be coped to /u/norails/current.
 
-	cd   002_capistrano_norails
-	bash 005_deploy.sh
+    cd   002_capistrano_norails
+    bash 005_deploy.sh
 
 Delete the local files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh
 
 == ISSUE: you must have a tty to run sudo
 
 When running "cap sudo_whoami", I got this error.
 
-	sorry, you must have a tty to run sudo
+    sorry, you must have a tty to run sudo
 
 SOLUTION
 
-	edit /etc/sudoers
-	comment out: # Default requiretty
+    edit /etc/sudoers
+    comment out: # Default requiretty

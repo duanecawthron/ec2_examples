@@ -2,10 +2,10 @@
 
 == Resources
 
-	https://github.com/capistrano/capistrano/
-	https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
-	http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
-	http://ryanflorence.com/deploying-with-capistrano-without-rails/
+    https://github.com/capistrano/capistrano/
+    https://github.com/capistrano/capistrano/wiki/2.x-From-The-Beginning
+    http://craiccomputing.blogspot.com/2009/07/rails-git-capistrano-ec2-and-ssh.html
+    http://ryanflorence.com/deploying-with-capistrano-without-rails/
 
 == Introduction
 
@@ -15,28 +15,28 @@ This example generates a simple rails application, adds Capistrano and deploys t
 
 Setup the server using these examples.
 
-	003_nginx
-	004_thin
-	005_thin_conf
+    003_nginx
+    004_thin
+    005_thin_conf
 
 == Execution
 
 Generate and run the example.
 
-	cd   008_capistrano
-	bash 001_install_gems.sh
-	bash 002_new_app.sh
-	bash 003_reset_database.sh
-	bash 004_rails_server.sh
+    cd   008_capistrano
+    bash 001_install_gems.sh
+    bash 002_new_app.sh
+    bash 003_reset_database.sh
+    bash 004_rails_server.sh
 
 Deploy the application after installing yum packages and the gemset.
 
-	bash 005_deploy.sh
+    bash 005_deploy.sh
 
 Deploy the application only. Do not reinstall the yum packages or gemset.
 
-	bash 006_redeploy.sh
+    bash 006_redeploy.sh
 
 Delete the local database, files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh

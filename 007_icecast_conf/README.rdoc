@@ -2,9 +2,9 @@
 
 == Resources
 
-	http://www.icecast.org/
-	http://mpd.wikia.com/wiki
-	https://wiki.archlinux.org/index.php/Mpd
+    http://www.icecast.org/
+    http://mpd.wikia.com/wiki
+    https://wiki.archlinux.org/index.php/Mpd
 
 == Introduction
 
@@ -12,41 +12,41 @@ Install the configuration files for Icecast.
 
 == Install Capistrano on the EC2 server
 
-	cd   002_capistrano_norails/server
-	bash 001_install_capistrano.sh
+    cd   002_capistrano_norails/server
+    bash 001_install_capistrano.sh
 
 == Generate the example and deploy to the EC2 server
 
 Deploy the example with Capistrano and configure the software (icecast, mpd, mpc and ncmpc).
 
-	cd   007_icecast_conf
-	bash 005_deploy.sh
+    cd   007_icecast_conf
+    bash 005_deploy.sh
 
 Delete the local files.
 
-	bash 999_clean.sh
+    bash 999_clean.sh
 
 == Use VLC to test the stream
 
-	http://ec2-184-72-84-255.compute-1.amazonaws.com:8000/stream.mp3
-	http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/stream.ogg
+    http://ec2-184-72-84-255.compute-1.amazonaws.com:8000/stream.mp3
+    http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/stream.ogg
 
 == View the Admin Interface
 
-	http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/admin/stats.xsl
-	username: admin
-	password: hackme
+    http://ec2-184-72-84-255.compute-1.amazonaws.com:8080/admin/stats.xsl
+    username: admin
+    password: hackme
 
 == ISSUE: MPD prints error messages when it starts
 
 Start MPD
 
-	/usr/local/bin/mpd /etc/mpd.conf
+    /usr/local/bin/mpd /etc/mpd.conf
 
 It starts with these messages:
 
-	listen: bind to '0.0.0.0:6600' failed: Address already in use (continuing anyway, because binding to '[::]:6600' succeeded)
-	Failed to load database: Database corrupted
+    listen: bind to '0.0.0.0:6600' failed: Address already in use (continuing anyway, because binding to '[::]:6600' succeeded)
+    Failed to load database: Database corrupted
 
 SOLUTION
 

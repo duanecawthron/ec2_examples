@@ -4,39 +4,39 @@ Use RVM to manage multiple versions of ruby and multiple sets of gems.
 
 Resources
 
-	https://rvm.beginrescueend.com/
-	https://rvm.beginrescueend.com/rvm/install/
+    https://rvm.beginrescueend.com/
+    https://rvm.beginrescueend.com/rvm/install/
 
 == Install RVM on Basic 32-bit Amazon Linux
 
 Follow the instructions on https://rvm.beginrescueend.com/rvm/install/ for Multi-User installation as root (for server administrators).
 
-	cd 001_rvm
-	scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com:/tmp
-	ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
-	cd   /tmp/server
-	sudo bash 000_install_rvm.sh; bash 001_instal_ruby.sh
+    cd 001_rvm
+    scp -r -i ~/.ssh/server001keypair.pem server ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com:/tmp
+    ssh -i ~/.ssh/server001keypair.pem ec2-user@ec2-184-72-84-255.compute-1.amazonaws.com
+    cd   /tmp/server
+    sudo bash 000_install_rvm.sh; bash 001_instal_ruby.sh
 
 RVM was installed here.
 
-	/etc/rvmrc
-	/etc/profile.d/rvm.sh
-	/usr/local/rvm/
+    /etc/rvmrc
+    /etc/profile.d/rvm.sh
+    /usr/local/rvm/
 
 Change the owner of /usr/local/rvm if you plan to manage the gemsets as ec2-user (not root).
 
-	sudo chown -R ec2-user /usr/local/rvm
+    sudo chown -R ec2-user /usr/local/rvm
 
 == Install Ruby on Basic 32-bit Amazon Linux
 
-	bash 001_instal_ruby.sh
+    bash 001_instal_ruby.sh
 
 == Commands
 
 Run this command to get help.
 
-	rvm usage
+    rvm usage
 
 This example has a list of common rvm commands.
 
-	https://github.com/duanecawthron/rails_examples/tree/master/006_rvm
+    https://github.com/duanecawthron/rails_examples/tree/master/006_rvm

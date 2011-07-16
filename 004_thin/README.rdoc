@@ -2,8 +2,8 @@
 
 == Resources
 
-	http://kevin.vanzonneveld.net/techblog/article/ruby_with_nginx_on_ubuntu_lucid/
-	http://www.beechtreetech.com/ruby-on-rails-thin-and-nginx-on-windows#steps
+    http://kevin.vanzonneveld.net/techblog/article/ruby_with_nginx_on_ubuntu_lucid/
+    http://www.beechtreetech.com/ruby-on-rails-thin-and-nginx-on-windows#steps
 
 == Introduction
 
@@ -11,29 +11,29 @@ Build and install Thin. This example does not attempt to configure the software.
 
 == Install Capistrano on the EC2 server
 
-	cd   002_capistrano_norails/server
-	bash 001_install_capistrano.sh
+    cd   002_capistrano_norails/server
+    bash 001_install_capistrano.sh
 
 == Generate the example and deploy to the EC2 server
 
 Deploy the example with Capistrano.
 
-	cd   004_thin
-	bash 005_deploy.sh
+    cd   004_thin
+    bash 005_deploy.sh
 
 Delete the local files and gemset.
 
-	bash 999_clean.sh
+    bash 999_clean.sh
 
 == NOTE: Installing gems without rvm
 
 Before using rvm, I installed rubygems, rails and thin like this.
 
-	yum -y install rubygems.noarch
-	gem install rails –platform=ruby
-	gem install thin –platform=ruby
-	gem install mysql
-	# not this one: gem install mysql –platform=ruby
+    yum -y install rubygems.noarch
+    gem install rails –platform=ruby
+    gem install thin –platform=ruby
+    gem install mysql
+    # not this one: gem install mysql –platform=ruby
 
 I am not sure why "–platform=ruby" was used. I don't think it is recognized.
 
@@ -41,14 +41,14 @@ I am not sure why "–platform=ruby" was used. I don't think it is recognized.
 
 When running "thin install", I got this error.
 
-	/usr/local/rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require':
-	 no such file to load -- openssl (LoadError)
+    /usr/local/rvm/rubies/ruby-1.8.7-p334/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:36:in `gem_original_require':
+     no such file to load -- openssl (LoadError)
 
 SOLUTION
 
 From: http://groups.google.com/group/thin-ruby/browse_thread/thread/e30fc6d9f0dd2ee7
 
-	rvm package install zlib
-	rvm package install openssl		# required by thin
-	rvm remove 1.8.7
-	rvm install 1.8.7 --with-zlib-dir=$rvm_path/usr --with-openssl-dir=$rvm_path/usr
+    rvm package install zlib
+    rvm package install openssl     # required by thin
+    rvm remove 1.8.7
+    rvm install 1.8.7 --with-zlib-dir=$rvm_path/usr --with-openssl-dir=$rvm_path/usr
