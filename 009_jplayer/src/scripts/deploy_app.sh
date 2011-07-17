@@ -12,3 +12,6 @@ cap restart_thin
 
 echo Browse to:
 echo http://ec2-184-72-84-255.compute-1.amazonaws.com
+echo /var/log/icecast
+echo /var/log/mpd
+echo nginx and thin logs: /u/myapp/current/log
