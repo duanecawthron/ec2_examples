@@ -25,6 +25,7 @@ end
 desc "restart nginx"
 task :restart_nginx do
 	run "sudo /sbin/service nginx restart"
+	run "sudo chown ec2-user /u/myapp/current/log/*"
 end
 
 desc "start thin"
