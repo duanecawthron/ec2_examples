@@ -45,7 +45,7 @@ The script expects to find these files in the folder.
     <folder>/Capfile                    # (required) Capistrano configuration
     <folder>/config/deploy.rb           # (required) Capistrano configuration
     <folder>/scripts/deploy_gems.sh     # (optional) install yum packages and gems on the server
-    <folder>/scripts/deploy_app.sh      # (optional) install the appllicatin on the server
+    <folder>/scripts/deploy_app.sh      # (optional) install the application on the server
     <folder>/more_stuff                 # (optional)
 
 After the files have been copied, these two scripts will be called if they exist.
