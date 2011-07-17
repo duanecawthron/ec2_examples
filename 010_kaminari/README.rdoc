@@ -1,57 +1,18 @@
-= Install Icecast streaming media server and Music Player Daemon (MPD)
+= Patch Kaminaro and Install Kaminari on the EC2 server
 
 == Resources
 
-    http://www.icecast.org/
-    http://mpd.wikia.com/wiki
+    https://github.com/amatsuda/kaminari
 
 == Introduction
 
-Build and install icecast, mpd, mpc and ncmpc.
+Add a scope modifier to Kaminari so that it can be polled to find new blog posts.
 
-    /usr/local/bin/mpc
-    /usr/local/bin/mpd
-    /usr/local/bin/ncmpc
-    /usr/local/bin/icecast
+== Patch and Install Kaminari on the EC2 server
 
-This example does not attempt to configure the software.
-
-== Install Capistrano on the EC2 server
-
-    cd   002_capistrano_norails/server
-    bash 001_install_capistrano.sh
-
-== Generate the example and deploy to the EC2 server
-
-Deploy the example with Capistrano and build the software (icecast, mpd, mpc and ncmpc).
-
-    cd   006_icecast
+    cd   010_kaminar
     bash 005_deploy.sh
 
 Delete the local files.
 
     bash 999_clean.sh
-
-== ISSUE: libmpdclient2 not found
-
-    cd mpc-0.20
-    ./configure
-        configure: error: libmpdclient2 is required
-
-SOLUTION 1
-
-    cd libmpdclient-2.4
-    ./configure --prefix=/usr
-
-SOLUTION 2
-
-    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
-
-== ISSUE: libmpdclient2 not found
-
-    running mpc, it could not find libmpdclient2
-
-SOLUTION
-
-    cd libmpdclient-2.4
-    ./configure --prefix=/usr
