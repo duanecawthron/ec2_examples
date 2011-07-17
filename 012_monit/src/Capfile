@@ -1,0 +1,29 @@
+require 'rubygems'
+require 'railsless-deploy'
+load 'config/deploy.rb' if respond_to?(:namespace)
+
+desc "yum install packages required by Monit"
+task :yum do
+	run "sudo #{deploy_to}/current/scripts/yum.sh"
+end
+
+desc "download and make Monit"
+task :make do
+	run "sudo #{deploy_to}/current/scripts/download.sh"
+	run "sudo #{deploy_to}/current/scripts/make.sh"
+end
+
+desc "Configure Monit"
+task :config do
+	run "sudo #{deploy_to}/current/scripts/config.sh"
+end
+
+desc "start monit"
+task :start_monit do
+	run "sudo /usr/local/bin/monit"
+end
+
+desc "stop monit"
+task :stop_monit do
+	run "sudo /usr/local/bin/monit quit"
+end

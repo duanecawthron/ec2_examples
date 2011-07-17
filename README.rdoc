@@ -20,3 +20,7 @@ These examples demonstrate how to install and manage software on EC2.
 006_icecast:: Install Icecast streaming media server and Music Player Daemon (MPD)
 007_icecast_conf:: Configure Icecast streaming media server and Music Player Daemon (MPD)
 008_capistrano:: Generate a simple rails application and deploy to EC2 with Capistrano
+009_jplayer:: Generate, deploy and run a simple application that plays music with jPlayer
+010_kaminari:: Patch Kaminari and Install Kaminari on the EC2 server
+011_jplayer_ublog:: Generate, deploy and run a simple application that plays music with jPlayer
+012_monit:: Install Monit for monitoring, processes, files, directories and filesystems

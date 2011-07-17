@@ -1,4 +1,4 @@
-= Patch Kaminaro and Install Kaminari on the EC2 server
+= Patch Kaminari and Install Kaminari on the EC2 server
 
 == Resources
 

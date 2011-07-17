@@ -1,0 +1,46 @@
+load 'deploy' if respond_to?(:namespace) # cap2 differentiator
+Dir['vendor/gems/*/recipes/*.rb','vendor/plugins/*/recipes/*.rb'].each { |plugin| load(plugin) }
+
+load 'config/deploy' # remove this line to skip loading any of the default tasks
+
+desc "Setup the Rails application"
+task :setup do
+	run "sudo #{deploy_to}/current/scripts/yum.sh"
+	run "#{deploy_to}/current/scripts/setup.sh"
+end
+
+desc "start nginx"
+task :start_nginx do
+	run "sudo /sbin/service nginx start"
+end
+
+desc "stop nginx"
+task :stop_nginx do
+	run "sudo /sbin/service nginx stop"
+end
+
+desc "restart nginx"
+task :restart_nginx do
+	run "sudo /sbin/service nginx restart"
+	run "sudo chown ec2-user /u/myapp/current/log/*"
+end
+
+desc "start thin"
+task :start_thin do
+	run "#{deploy_to}/current/scripts/start_thin.sh"
+end
+
+desc "stop thin"
+task :stop_thin do
+	run "#{deploy_to}/current/scripts/stop_thin.sh"
+end
+
+desc "restart thin"
+task :restart_thin do
+	run "#{deploy_to}/current/scripts/restart_thin.sh"
+end
+
+desc "reset database"
+task :reset_db do
+	run "#{deploy_to}/current/scripts/reset_db.sh"
+end

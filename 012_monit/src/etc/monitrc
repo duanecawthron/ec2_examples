@@ -1,0 +1,18 @@
+#
+# Monit control file
+#
+
+set daemon 120 # Poll at 2-minute intervals
+set logfile /var/log/monit.log
+
+# use this for /var/log/messages
+# set logfile syslog facility log_daemon
+
+check process mpd 
+   with pidfile "/u/mpd/mpd.pid"
+   start program = "/etc/init.d/mpd start" with timeout 60 seconds
+   stop program = "/etc/init.d/mpd stop"
+   if 2 restarts within 3 cycles then timeout
+   if totalmem > 100 Mb then alert
+   if children > 5 for 5 cycles then stop
+   if cpu usage > 90% for 3 cycles then restart

@@ -1,0 +1,24 @@
+= Install Monit for monitoring, processes, files, directories and filesystems
+
+== Resources
+
+    http://mmonit.com/monit/
+
+== Introduction
+
+
+== Install Capistrano on the EC2 server
+
+    cd   002_capistrano_norails/server
+    bash 001_install_capistrano.sh
+
+== Generate the example and deploy to the EC2 server
+
+Deploy the example with Capistrano and build the software (monit).
+
+    cd   012_monit
+    bash 005_deploy.sh
+
+Delete the local files.
+
+    bash 999_clean.sh

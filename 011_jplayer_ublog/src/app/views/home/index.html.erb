@@ -1,0 +1,33 @@
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function(){
+	gotPageFromServer(<%= @total_count %>, <%= @page_number %>);
+	load_home_index();
+});
+//]]>
+</script>
+
+<!--
+<%= render "jplayer" %>
+-->
+
+<div id="post_form">
+	<% form_tag (url_for(:controller => "home", :action => "create"), :remote => true) do  %>
+		<%= label_tag(:content, "What are you doing?") %><br />
+		<%= text_area_tag(:content, nil, :size => "44x6") %><br />
+		<%= submit_tag("Update") %>
+	<% end %>
+</div>
+
+<div id="more_form">
+	<% form_tag (url_for(:controller => "home", :action => "more"), :remote => true) do  %>
+		<%= submit_tag("More", :id => "more_btn") %>
+	<% end %>
+</div>
+
+<div id="posts">
+	<%= render :partial => @posts %> 
+</div>
+
+<p id="loading">Loading more page results...</p>
+
