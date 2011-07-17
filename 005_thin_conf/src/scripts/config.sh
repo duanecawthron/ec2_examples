@@ -24,6 +24,6 @@ sudo cp $TOP/etc/nginx_myapp.conf /etc/nginx/conf.d/myapp.conf
 
 sudo mkdir -p /etc/thin
 sudo chown -R ec2-user /etc/thin
-thin config -C /etc/thin/myapp -c /u/myapp/current --servers 3 -e development
+thin config -C /etc/thin/myapp -c /u/myapp/current --servers 1 -e development
 # or for caching, etc:
 # thin config -C /etc/thin/myapp -c /u/myapp/current --servers 3 -e production
