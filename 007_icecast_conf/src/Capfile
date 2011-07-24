@@ -2,14 +2,19 @@ require 'rubygems'
 require 'railsless-deploy'
 load 'config/deploy.rb' if respond_to?(:namespace)
 
-desc "Setup Icecast and MPD"
+desc "Setup Icecast, Ices and MPD"
 task :setup_icecast do
 	run "sudo #{deploy_to}/current/scripts/setup_icecast.sh"
 end
 
-desc "Play a song to test the server"
-task :play_test_song do
-	run "#{deploy_to}/current/scripts/play_test_song.sh"
+desc "Play a song using Ices to test the server"
+task :play_ices_test_song do
+	run "#{deploy_to}/current/scripts/play_ices_test_song.sh"
+end
+
+desc "Play a song using MPD to test the server"
+task :play_mpd_test_song do
+	run "#{deploy_to}/current/scripts/play_mpd_test_song.sh"
 end
 
 desc "start icecast"
@@ -25,6 +30,21 @@ end
 desc "restart icecast"
 task :restart_icecast do
 	run "sudo /sbin/service icecast restart"
+end
+
+desc "start ices"
+task :start_ices do
+	run "sudo /sbin/service ices start"
+end
+
+desc "stop ices"
+task :stop_ices do
+	run "sudo /sbin/service ices stop"
+end
+
+desc "restart ices"
+task :restart_ices do
+	run "sudo /sbin/service ices restart"
 end
 
 desc "start mpd"

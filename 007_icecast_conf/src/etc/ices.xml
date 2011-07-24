@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<ices>
+	<background>1</background>
+	<logpath>/var/log/ices</logpath>
+	<logfile>ices.log</logfile>
+	<logsize>2048</logsize>
+	<loglevel>3</loglevel>
+	<consolelog>0</consolelog>
+	<pidfile>/var/log/ices/ices.pid</pidfile>
+
+	<stream>
+		<metadata>
+			<name>My Stream</name>
+			<genre>Rock</genre>
+			<description>A short description of your stream</description>
+			<url>http://mysite.org</url>
+		</metadata>
+
+		<input>
+			<module>playlist</module>
+			<param name="type">script</param>
+			<param name="program">/u/music/playlist.sh</param>
+		</input>
+
+<!--
+		<input>
+			<module>playlist</module>
+			<param name="type">basic</param>
+			<param name="file">/u/music/playlist</param>
+			<param name="random">0</param>
+			<param name="once">0</param>
+			<param name="restart-after-reread">1</param>
+		</input>
+-->
+
+		<instance>
+		    <hostname>localhost</hostname>
+		    <port>8000</port>
+		    <password>hackme</password>
+		    <mount>/stream.ogg</mount>
+
+		    <encode>
+		        <quality>2</quality>
+		        <!--nominal-bitrate>32000</nominal-bitrate-->
+		        <samplerate>44100</samplerate>
+		        <channels>1</channels>
+		    </encode>
+
+		    <downmix>1</downmix>
+		</instance>
+
+	</stream>
+</ices>

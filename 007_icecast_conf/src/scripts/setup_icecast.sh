@@ -24,8 +24,10 @@ chown -R ec2-user /u/mpd
 chown -R ec2-user /u/music
 
 mkdir -p /var/log/icecast
+mkdir -p /var/log/ices
 mkdir -p /var/log/mpd
 chown -R ec2-user /var/log/icecast
+chown -R ec2-user /var/log/ices
 chown -R ec2-user /var/log/mpd
 
 # ---------------- Install config files
@@ -37,7 +39,7 @@ ln -s /u/etc/mpd_icecast.conf /u/etc/mpd.conf
 
 # ---------------- Install init scripts so that we can easily start and stop the services
 
-for name in icecast mpd
+for name in icecast ices mpd
 do
 	# Install the init script
 	cp /u/etc/init.d/$name /etc/rc.d/init.d

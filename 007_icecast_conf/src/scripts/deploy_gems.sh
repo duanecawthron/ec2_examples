@@ -7,8 +7,13 @@ cap setup_icecast
 # ---------------- start the server
 
 cap restart_icecast
-cap restart_mpd
-cap play_test_song
+
+if [ "use_ices" = "use_ices" ]; then
+	cap play_ices_test_song
+else
+	cap restart_mpd
+	cap play_mpd_test_song
+fi
 
 # ---------------- Use VLC to test the stream
 
