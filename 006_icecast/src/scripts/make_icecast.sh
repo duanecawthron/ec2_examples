@@ -13,6 +13,8 @@ mkdir -p tmp
 cd tmp
 
 tar -zxf ../download/icecast-2.3.2.tar.gz
+tar -zxf ../download/ices-2.0.1.tar.gz
+tar -zxf ../download/ices-0.4.tar.gz
 tar -zxf ../download/libshout-2.2.2.tar.gz
 tar -zxf ../download/lame-3.98.4.tar.gz
 tar -zxf ../download/libmad-0.15.1b.tar.gz
@@ -31,7 +33,8 @@ do
 	make install
 done
 
-for name in icecast-2.3.2 mpc-0.20 mpd-0.16.2 ncmpc-0.18
+# make only one of ices-0.4 and ices-2.0.1, both install to /usr/local/bin/ices
+for name in icecast-2.3.2 ices-2.0.1 mpc-0.20 mpd-0.16.2 ncmpc-0.18
 do
 	cd $TOP/tmp
 	[ -d $name ] || { echo ERROR: cannot find $name in `pwd`; exit 1; }

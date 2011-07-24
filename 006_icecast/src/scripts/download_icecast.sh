@@ -13,6 +13,12 @@ cd download
 [ -f icecast-2.3.2.tar.gz ] || \
 wget --no-verbose http://downloads.xiph.org/releases/icecast/icecast-2.3.2.tar.gz
 
+[ -f ices-2.0.1.tar.gz ] || \
+wget --no-verbose http://downloads.us.xiph.org/releases/ices/ices-2.0.1.tar.gz
+
+[ -f ices-0.4.tar.gz ] || \
+wget --no-verbose http://downloads.us.xiph.org/releases/ices/ices-0.4.tar.gz
+
 [ -f libshout-2.2.2.tar.gz ] || \
 wget --no-verbose http://downloads.us.xiph.org/releases/libshout/libshout-2.2.2.tar.gz
 
